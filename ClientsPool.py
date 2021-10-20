@@ -4,6 +4,11 @@ import asyncio
 
 
 class ClientsPool:
+    '''
+    Класс для инициализации и управления торговыми клиентами. 
+    При старте бота ClientsPool выгружает из базы данных зарегестрированных клиентов указанной биржи,
+    а также их торговые параметры и создает пул клиентов
+    '''
 
     def __init__(self, exchange, database: Database, loop: asyncio.AbstractEventLoop):
         self.exchange = exchange
