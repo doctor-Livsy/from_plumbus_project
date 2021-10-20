@@ -17,10 +17,10 @@ class ClientsPool:
     @staticmethod
     async def load_all_clients(database: Database, exchange: str):
 
-        # Загрузка записей из таблицы API_KEYS в формате словаря
+        # Загрузка записей из таблицы some_table в формате словаря
         api_records = await database.select_from_table('user_id', 'api_key',
                                                        's_key',
-                                                       table='api_keys',
+                                                       table='some_table',
                                                        exchange=exchange)
 
         # Создание итогового словаря с объектами клиентов
@@ -43,7 +43,7 @@ class ClientsPool:
                                                             'trade_pair',
                                                             'leverage',
                                                             'margin_value',
-                                                            table='trade_parameters',
+                                                            table='some_table',
                                                             exchange=exchange)
 
         # Рефакторинг данных для дальнейшего добавления в словарь __clients
