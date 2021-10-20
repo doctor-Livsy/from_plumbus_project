@@ -4,6 +4,7 @@ from data import config
 
 
 class Database:
+    ''' API к базе данных Postgresql с асинхронными запросами. '''
 
     def __init__(self, loop: asyncio.AbstractEventLoop):
         self.pool = loop.run_until_complete(
